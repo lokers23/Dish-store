@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Категория";
+}
+<div class="text-center card" style="background-color: white; height:8rem; display: flex; align-items: center; justify-content: center;">
+    <p style="font-size: 30px; font-weight:bolder;">Добро пожаловать</p>
+</div>
+<br />
+<div class="text-center" style="display:flex;flex-flow: row wrap;">
+    @foreach(var category in Model){
+        <div class="card" style="width: 18rem; margin:auto;">
+            <a asp-controller="Dish" asp-action="GetDishesCategory" asp-route-id="@category.Id"><img class="card-img-top" style="height: 18rem;" src="@Url.Content(category.ImagePath)" alt="Картинки нет"></a>
+            <div class="card-body">
+                <h5 class="card-title">@category.Name</h5>
+                <p class="card-text">Количество: @category.Dishes.Count</p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DishStore.Models.Manufacturer>
+
+@{
+    ViewData["Title"] = "Редактирование";
+    Layout = "_LayoutRedact";
+}
+
+<h1 class="mb-4">Производители</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добавить запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Название")
+            </th>
+            <th>
+                @Html.DisplayName("Страна")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td class="align-middle">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
