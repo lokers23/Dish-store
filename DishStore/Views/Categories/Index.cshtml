@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DishStore.Models.Category>
+
+@{
+    Layout = "_LayoutRedact";
+    ViewData["Title"] = "Редактирование";
+}
+
+<h1 class="mb-4">Категории</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добавить запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Название</label>
+            </th>
+            <th>
+                <label>Изображение</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="align-middle">
+                <img src="@Url.Content(item.ImagePath)" style="width: 112px; height: 112px;" alt="@item.Name"/>
+                @* @Html.DisplayFor(modelItem => item.ImagePath) *@
+            </td>
+            <td class="align-middle">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

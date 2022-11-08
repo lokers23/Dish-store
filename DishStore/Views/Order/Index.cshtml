@@ -1,0 +1,94 @@
+﻿@model IEnumerable<DishStore.Models.Order>
+
+@{
+    Layout = "_LayoutRedact";
+    ViewData["Title"] = "Редактирование";
+}
+
+<h1 class="mb-4">Заказаз</h1>
+
+<div class="bg-light p-3">
+    <form class="form" method="get">
+        <div class="d-flex">
+            <div style="margin-right:20px;">
+                <label class="form-label">Почта</label>
+                <div>
+                    <input name="email" class="form-control" type="email"/>
+                </div>
+            </div>
+            <div style="margin-right:20px;">
+                <label class="form-label">Дата</label>
+                <div>
+                    <div class="d-flex mb-2">
+                        <label class="form-label" style="margin-right: 10px;">От</label>
+                        <input name="startDate" class="form-control" type="date" />
+                    </div>
+                    <div class="d-flex">
+                        <label class="form-label" style="margin-right:10px;">До</label>
+                        <input name="endDate" class="form-control" type="date" />
+                    </div>
+                </div>
+            </div>
+            <div style="margin-right:20px;">
+                <label class="form-label">Адрес</label>
+                <div>
+                    <input name="address" class="form-control" type="text"/>
+                </div>
+            </div>
+            <button asp-action="Index" type="submit" class="btn btn-lg btn-info">Фильтр</button>
+        </div>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Имя")
+            </th>
+            <th>
+                @Html.DisplayName("Способ оплаты")
+            </th>
+            <th>
+                @Html.DisplayName("Адресс")
+            </th>
+            <th>
+                @Html.DisplayName("Почта")
+            </th>
+            <th>
+                @Html.DisplayName("Номер телефона")
+            </th>
+            <th>
+                @Html.DisplayName("Дата")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle col-2">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PaymentMethod)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.DateOrder)
+            </td>
+            <td class="align-middle">
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
