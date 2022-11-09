@@ -1,0 +1,12 @@
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\bin\Debug\net6.0\DishStore.Domain.deps.json
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\bin\Debug\net6.0\DishStore.Domain.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\bin\Debug\net6.0\DishStore.Domain.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.csproj.AssemblyReference.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.AssemblyInfoInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.AssemblyInfo.cs
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.csproj.CoreCompileInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\refint\DishStore.Domain.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\DishStore.Domain.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Domain\obj\Debug\net6.0\ref\DishStore.Domain.dll

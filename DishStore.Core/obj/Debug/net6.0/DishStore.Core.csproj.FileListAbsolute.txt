@@ -1,0 +1,17 @@
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.Core.deps.json
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.Core.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.Core.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.DAL.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.Domain.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.DAL.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\bin\Debug\net6.0\DishStore.Domain.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.csproj.AssemblyReference.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.AssemblyInfoInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.AssemblyInfo.cs
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.csproj.CoreCompileInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.csproj.CopyComplete
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\refint\DishStore.Core.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\DishStore.Core.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.Core\obj\Debug\net6.0\ref\DishStore.Core.dll

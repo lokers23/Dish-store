@@ -1,0 +1,17 @@
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.DAL.deps.json
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.DAL.runtimeconfig.json
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.DAL.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.DAL.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.Domain.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\bin\Debug\net6.0\DishStore.Domain.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.csproj.AssemblyReference.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.AssemblyInfoInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.AssemblyInfo.cs
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.csproj.CoreCompileInputs.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.csproj.CopyComplete
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\refint\DishStore.DAL.dll
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.pdb
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\DishStore.DAL.genruntimeconfig.cache
+F:\ucheba\kurs5_sem1\server_scripts\KR_scriptserver\DishStore\DishStore.DAL\obj\Debug\net6.0\ref\DishStore.DAL.dll
