@@ -18,7 +18,7 @@ public class DishRepository : IRepository<Dish>
             .Include(d => d.Category);
     }
 
-    public async  Task<Dish?> GetByIdAsync(int id)
+    public async Task<Dish?> GetByIdAsync(int id)
     {
         var dish = await _db.Dishes
             .Include(d => d.Manufacturer)

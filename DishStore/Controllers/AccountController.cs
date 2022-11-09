@@ -28,6 +28,8 @@ namespace DishStore.Controllers
                 return View(registerViewModel);
             }
             
+            //todo:Check login in table db
+            
             var user = await _userService.CreateUserAsync(registerViewModel);
             var result = _userService.Authenticate(user);
 
@@ -41,7 +43,7 @@ namespace DishStore.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }

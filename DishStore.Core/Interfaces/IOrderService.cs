@@ -9,5 +9,5 @@ public interface IOrderService
         DateTime? startDate, DateTime? endDate);
     public Task<Order?> GetOrderByIdAsync(int id);
     public Task<bool> DeleteOrderAsync(int id);
-    public Task<bool> SaveOrderAsync(Order order, List<CartItem> cartItems);
+    public Task<bool> CreateOrderAsync(Order order, List<DishOrder> dishOrders);
 }

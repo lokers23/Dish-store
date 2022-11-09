@@ -17,7 +17,8 @@ public class CategoryService : ICategoryService
     {
         try
         {
-            var categories = await _categoryRepository.GetAll().ToListAsync();
+            var categories = await _categoryRepository.GetAll()
+                .Include(c => c.Dishes).ToListAsync();
             return categories;
         }
         catch (Exception exception)
@@ -44,12 +45,37 @@ public class CategoryService : ICategoryService
         }
     }
 
-    public async Task<bool> SaveAsync(Category category)
+    public async Task<bool> SaveCategoryAsync(Category category)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (category.Id == 0)
+            {
+                await _categoryRepository.CreateAsync(category);
+                return true;
+            }
+
+            var categoryFromDb = await _categoryRepository.GetByIdAsync(category.Id);
+            if (categoryFromDb == null)
+            {
+                throw new ArgumentNullException();
+            }
+            
+            categoryFromDb.Name = category.Name;
+            categoryFromDb.Dishes = category.Dishes;
+            categoryFromDb.ImagePath = category.ImagePath;
+
+            await _categoryRepository.UpdateAsync(categoryFromDb);
+            
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteCategoryAsync(int id)
     {
         try
         {

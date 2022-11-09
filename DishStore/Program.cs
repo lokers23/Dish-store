@@ -1,3 +1,8 @@
+using DishStore.Core.Interfaces;
+using DishStore.Core.Services;
+using DishStore.DAL.Interfaces;
+using DishStore.DAL.Repositories;
+using DishStore.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +26,19 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
         options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
     });
+
+
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
+builder.Services.AddScoped<IRepository<Manufacturer>, ManufacturerRepository>();
+builder.Services.AddScoped<IRepository<Dish>, DishRepository>();
+builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
+
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IManufacturerService, ManufacturerService>();
+builder.Services.AddScoped<IDishService, DishService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 //builder.Services.AddAuthentication("Cookies").AddCookie();
 

@@ -63,7 +63,7 @@ namespace DishStore.Controllers
             var fullPath = _webHostEnvironment.WebRootPath + path;
                 
             await ImageHelper.SaveImage(image, fullPath);
-            await _categoryService.SaveAsync(category);
+            await _categoryService.SaveCategoryAsync(category);
                 
             return RedirectToAction("Index");
            
@@ -96,7 +96,7 @@ namespace DishStore.Controllers
 
             if (image == null)
             {
-                ModelState.AddModelError("ImagePath", "Укажите изображение");
+                ModelState.AddModelError("ImagePath", "Select image.");
                 return View(category);
             }
             
@@ -111,7 +111,7 @@ namespace DishStore.Controllers
             var fullPath = _webHostEnvironment.WebRootPath + path;
                 
             await ImageHelper.SaveImage(image, fullPath);
-            var isSuccess =  await _categoryService.SaveAsync(category);
+            var isSuccess =  await _categoryService.SaveCategoryAsync(category);
             if (!isSuccess)
             {
                 return StatusCode(500, "Server error. Try again update category.");
@@ -140,7 +140,7 @@ namespace DishStore.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var isDelete =  await _categoryService.DeleteAsync(id);
+            var isDelete =  await _categoryService.DeleteCategoryAsync(id);
             if (!isDelete)
             {
                 return BadRequest("Throw exception on server. Try delete category again.");

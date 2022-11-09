@@ -29,7 +29,6 @@ namespace DishStore.Controllers
 
         public async Task<IActionResult> Add(int id)
         {
-            //Dish dish = await _dbContext.Dishes.FindAsync(id);
             var dish = await _dishService.GetDishByIdAsync(id);
             if (dish == null)
             {

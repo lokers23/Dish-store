@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "hwnPd6VTXauNK+ggB6Ef189i5OnLMXu9A+zjGw/FLErgzFbDq9+y5xM31qxJrkw0a2hHl9pKUmIE43uYWylZaw==",
-  "success": false,
+  "dgSpecHash": "M6KFJKr4Cc40AvSns3xou5XfiasCCBniDlfgP14SBuiSz3KbqoaRzuCtoQ2Kw9iw6acSYOB32mKxlA1PwuW/FQ==",
+  "success": true,
   "projectFilePath": "F:\\ucheba\\kurs5_sem1\\server_scripts\\KR_scriptserver\\DishStore\\DishStore\\DishStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lokers\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -186,24 +186,5 @@
     "C:\\Users\\Lokers\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Lokers\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 6.0.10 to 6.0.6. Reference the package directly from the project to select a different version. \r\n DishStore -> DishStore.DAL -> Microsoft.EntityFrameworkCore (>= 6.0.10) \r\n DishStore -> Microsoft.EntityFrameworkCore (>= 6.0.6)",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.10 to 6.0.6. Reference the package directly from the project to select a different version. \r\n DishStore -> DishStore.DAL -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.10) \r\n DishStore -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.6)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

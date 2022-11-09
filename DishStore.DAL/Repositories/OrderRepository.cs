@@ -21,6 +21,8 @@ public class OrderRepository : IRepository<Order>
     {
         var order = await _db.Orders
             .Include(o => o.User)
+            .Include(o => o.DishOrders)
+            .ThenInclude(d => d.Dish)
             .FirstOrDefaultAsync(d => d.Id == id);
         
         return order;

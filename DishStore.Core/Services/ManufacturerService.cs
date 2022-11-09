@@ -1,6 +1,7 @@
 ﻿using DishStore.Core.Interfaces;
 using DishStore.DAL.Interfaces;
 using DishStore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DishStore.Core.Services;
 
@@ -11,19 +12,59 @@ public class ManufacturerService : IManufacturerService
     {
         _manufacturerRepository = manufacturerRepository;
     }
-    public Task<List<Manufacturer>> GetManufacturersAsync()
+    public async Task<List<Manufacturer>> GetManufacturersAsync()
     {
-        throw new NotImplementedException();
+        try
+        {
+            var manufacturers = await _manufacturerRepository.GetAll().ToListAsync();
+            return manufacturers;
+        }
+        catch (Exception e)
+        {
+            return new List<Manufacturer>();
+        }
     }
 
-    public Task<Manufacturer?> GetManufacturerByIdAsync(int id)
+    public async Task<Manufacturer?> GetManufacturerByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var manufacturer = await _manufacturerRepository.GetByIdAsync(id);
+            return manufacturer;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
-    public Task<bool> SaveManufacturerAsync(Manufacturer manufacturer)
+    public async Task<bool> SaveManufacturerAsync(Manufacturer manufacturer)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (manufacturer.Id == 0)
+            {
+                await _manufacturerRepository.CreateAsync(manufacturer);
+                return true;
+            }
+
+            var manufacturerFromDb = await _manufacturerRepository.GetByIdAsync(manufacturer.Id);
+            if (manufacturerFromDb == null) 
+            { 
+                throw new ArgumentNullException();
+            }
+                
+            manufacturerFromDb.Country = manufacturer.Country;
+            manufacturerFromDb.Name = manufacturer.Name;
+            manufacturerFromDb.Dishes = manufacturer.Dishes;
+
+            await _manufacturerRepository.UpdateAsync(manufacturer);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 
     public async Task<bool> DeleteManufacturerAsync(int id)

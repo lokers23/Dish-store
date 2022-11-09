@@ -11,56 +11,30 @@ namespace DishStore.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IUserService _userService;
+        private readonly IDishService _dishService;
         private const string Success = "Авторизуйтесь перед оформлением заказа!";
-        public OrderController(IOrderService orderService, IUserService userService)
+        public OrderController(IOrderService orderService, IUserService userService, IDishService dishService)
         {
             _userService = userService;
             _orderService = orderService;
+            _dishService = dishService;
         }
 
         public IActionResult Index(string email, string address, DateTime? startDate, DateTime? endDate)
         {
-            // IQueryable<Order> orders = _dishDbContext.Orders;
-            // if (!string.IsNullOrEmpty(email))
-            // {
-            //     orders = orders.Where(o => o.Email.StartsWith(email));
-            // }
-            //
-            // if (!string.IsNullOrEmpty(address))
-            // {
-            //     orders = orders.Where(o => o.Address.StartsWith(address));
-            // }
-            //
-            // if (startDate != null && endDate != null)
-            // {
-            //     orders = orders.Where(o => o.DateOrder >= startDate && o.DateOrder <= endDate);
-            // }
-
             var orders = _orderService.GerOrdersWithFilter(email, address, startDate,endDate);
             return View(orders);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            
-            // var order = _dishDbContext.Orders
-            //     .Include(o => o.User)
-            //     .Include(o => o.DishOrders)
-            //     .ThenInclude(d => d.Dish)
-            //     .FirstOrDefault(o => o.Id == id);
             var order = await _orderService.GetOrderByIdAsync(id);
-            
             return View(order);
         }
 
         [HttpGet]
         public async Task<IActionResult> Delete(int id, IFormCollection collection)
         {
-            // var order = _dishDbContext.Orders
-            //     .Include(o => o.User)
-            //     .Include(o => o.DishOrders)
-            //     .ThenInclude(d => d.Dish)
-            //     .FirstOrDefault(o => o.Id == id);
             var order = await _orderService.GetOrderByIdAsync(id);
             return View(order);
         } 
@@ -75,7 +49,6 @@ namespace DishStore.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-           
             if (User.Identity?.Name == null)
             {
                 TempData["Success"] = Success;
@@ -106,29 +79,23 @@ namespace DishStore.Controllers
                 return RedirectToAction("Register", "Account");
             }
             
-            //var user = _dishDbContext.Users.FirstOrDefault(u => u.Login == );
             order.User = user;
             
             ModelState.Remove("User");
             if (!ModelState.IsValid) return View(order);
-            
             order.DateOrder = DateTime.Now;
 
             var items = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-            await _orderService.SaveOrderAsync(order, items);
-            // _dishDbContext.Orders.Add(order);
-            // _dishDbContext.SaveChanges();
-            //
-            // var dishOrders = items.Select(i => new DishOrder
-            // {
-            //     Dish = _dishDbContext.Dishes.FirstOrDefault(d => d.Id == i.Dish.Id),
-            //     Order = order,
-            //     Count = i.Quantity
-            // }).ToList();
-            //
-            // order.DishOrders = dishOrders;
-            //
-            // _dishDbContext.SaveChanges();
+            var tasks =  items.Select(async i => new DishOrder
+            {
+                Dish = await _dishService.GetDishByIdAsync(i.Dish.Id) ?? new Dish(),
+                Order = order,
+                Count = i.Quantity
+            }).ToList();
+            
+            var dishOrders = await Task.WhenAll(tasks);
+            
+            await _orderService.CreateOrderAsync(order, dishOrders.ToList());
 
             TempData["Success"] = "Спасибо за покупку!";
             return RedirectToAction("Index", "Home");

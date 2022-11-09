@@ -3228,8 +3228,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DishStore.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10"
+          "Microsoft.EntityFrameworkCore": "6.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6"
         },
         "compile": {
           "bin/placeholder/DishStore.DAL.dll": {}
@@ -10022,25 +10022,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 6.0.10 to 6.0.6. Reference the package directly from the project to select a different version. \r\n DishStore -> DishStore.DAL -> Microsoft.EntityFrameworkCore (>= 6.0.10) \r\n DishStore -> Microsoft.EntityFrameworkCore (>= 6.0.6)",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.10 to 6.0.6. Reference the package directly from the project to select a different version. \r\n DishStore -> DishStore.DAL -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.10) \r\n DishStore -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.6)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

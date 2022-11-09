@@ -1,7 +1,4 @@
-﻿using DishStore.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 using DishStore.Core.Interfaces;
 
 namespace DishStore.Controllers
