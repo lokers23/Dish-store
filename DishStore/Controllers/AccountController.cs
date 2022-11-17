@@ -27,8 +27,13 @@ namespace DishStore.Controllers
             {
                 return View(registerViewModel);
             }
-            
-            //todo:Check login in table db
+
+            var isExist = await _userService.GetUserByLoginAsync(registerViewModel.Login) != null;
+            if (isExist)
+            {
+                ModelState.AddModelError(nameof(Login), "Пользователь с таким логином уже существует.");
+                return View(registerViewModel);
+            }
             
             var user = await _userService.CreateUserAsync(registerViewModel);
             var result = _userService.Authenticate(user);
@@ -51,7 +56,7 @@ namespace DishStore.Controllers
             var user = await _userService.GetUserByLoginAsync(model.Login);
             if (user == null)
             {
-                ModelState.AddModelError("", "Пользователь не существует!");
+                ModelState.AddModelError("", "Пользователь не существует.");
                 return View(model);
             }
 
